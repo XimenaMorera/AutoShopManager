@@ -1,0 +1,40 @@
+﻿@page
+@model AutoShopManager.Pages.Partess.IndexModel
+@{
+	ViewData["Title"] = "Index Partes";
+}
+	<h1>Index Partes</h1>
+	<p>
+		<a asp-page="Create" class="btn btn-success">Create New</a>
+	</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Partess[0].Nombre)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Partess[0].Proveedor)
+				</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.Partess)
+			{
+					<tr>
+						<td>
+						@Html.DisplayFor(modelItem => item.Nombre)
+						</td>
+						<td>
+						@Html.DisplayFor(modelItem => item.Proveedor)
+						</td>
+						<td>
+							<a a asp-page="./Edit" asp-route-id="@item.Id" class= "btn btn-warning">Edit</a>
+							<a a asp-page="./Delete" asp-route-id="@item.Id" class= "btn btn-danger">Delete</a>
+						</td>
+
+					</tr>
+			}
+		</tbody>
+	</table>

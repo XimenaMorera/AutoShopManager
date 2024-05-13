@@ -13,8 +13,8 @@ namespace AutoShopManager.Models
         public int IdCliente { get; set; }//llave foranea
         public Cliente Cliente { get; set; } //propiedad de navegacion
 
-        public ICollection<Reparacion> Reparaciones { get; set; }  //propiedad de navegacion
-        public ICollection<Cita> Citas { get; set; }  //propiedad de navegacion
+        public ICollection<Reparacion>? Reparaciones { get; set; } = default!; //propiedad de navegacion
+        public ICollection<Cita>? Citas { get; set; } = default!; //propiedad de navegacion
 
     }
 }

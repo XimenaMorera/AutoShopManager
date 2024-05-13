@@ -10,8 +10,16 @@ namespace AutoShopManager.Data
 {
     public class AutoShopManagerContext :DbContext
     {
-        public DbSet<Vehiculo> Vehiculos { get; set; }
+		public AutoShopManagerContext(DbContextOptions options) : base(options)
+        {
+
+        }
+
+		public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Partes> Partess { get; set; }
+        public DbSet<Reparacion> Reparaciones { get; set; }
+        public DbSet<Cita> Citas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
