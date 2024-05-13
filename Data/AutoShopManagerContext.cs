@@ -17,8 +17,8 @@ namespace AutoShopManager.Data
 
 		public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Partes> Partess { get; set; }
-        public DbSet<Reparacion> Reparaciones { get; set; }
+		public DbSet<Parte> Partes { get; set; }
+		public DbSet<Reparacion> Reparaciones { get; set; }
         public DbSet<Cita> Citas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
