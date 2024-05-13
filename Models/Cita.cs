@@ -4,6 +4,7 @@ namespace AutoShopManager.Models
 {
     public class Cita
     {
+        //Ensayando para los commits
         public int Id { get; set; }
         public int IdVehiculo { get; set; }
         public int IdCliente { get; set; }
