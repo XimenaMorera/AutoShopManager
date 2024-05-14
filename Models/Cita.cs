@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using AutoShopManager.Migrations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoShopManager.Models
 {
     public class Cita
     {
-        //Ensayando para los commits
+        //Ensayando para los commitssssssss
         public int Id { get; set; }
         public int IdVehiculo { get; set; }
         public int IdCliente { get; set; }
@@ -15,6 +16,7 @@ namespace AutoShopManager.Models
         public string Hora { get; set; }
         public string Descripcion { get; set; }
         public Cliente Cliente { get; set; } //propiedad de navegacion
-        
-    }
+	//	public Citas Citas  { get; set; }
+
+	}
 }
