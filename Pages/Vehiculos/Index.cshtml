@@ -1,7 +1,7 @@
 ﻿@page
 @model AutoShopManager.Pages.Vehiculos.IndexModel
 @{
-	ViewData["Title"] = "Index Clientes";
+	ViewData["Title"] = "Index Vehiculos";
 }
 		<h1>Index Vehiculo</h1>
 	<p>
@@ -18,6 +18,9 @@
 				</th>
 					<th>
 				@Html.DisplayNameFor(model => model.Vehiculos[0].Modelo)
+					</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Vehiculos[0].Color)
 					</th>
 					<th>
 				@Html.DisplayNameFor(model => model.Vehiculos[0].ClienteId)
@@ -38,6 +41,9 @@
 										<td>
 					@Html.DisplayFor(modelItem => item.Modelo)
 										</td>
+											<td>
+					@Html.DisplayFor(modelItem => item.Color)
+											</td>
 											<td>
 					@Html.DisplayFor(modelItem => item.ClienteId)
 											</td>

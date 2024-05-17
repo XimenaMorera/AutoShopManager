@@ -9,6 +9,6 @@
         public string Email { get; set; }
         public string? Direccion { get; set; }
         public ICollection<Vehiculo>? Vehiculos { get; set; } = default!; //propiedad de navegacion
-        public ICollection<Cita>? Citas { get; set; } = default!; //propiedad de navegacion
+        public ICollection<Cita>? Citas { get; set; } = default!;    //propiedad de navegacion
     }
 }
