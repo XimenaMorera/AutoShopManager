@@ -12,6 +12,6 @@ namespace AutoShopManager.Models
         public string Hora { get; set; }
         public string Descripcion { get; set; }
         public Cliente? Cliente { get; set; } = default!;//propiedad de navegacion
-        public Personas? personas { get; set; } = default!; 
+
     }
 }

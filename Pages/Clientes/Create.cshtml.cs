@@ -1,13 +1,9 @@
 using AutoShopManager.Data;
-using AutoShopManager.Migrations;
+using AutoShopManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AutoShopManager.Models;
-using Partes = AutoShopManager.Models.Partes;
 
-
-
-namespace AutoShopManager.Pages.Partess
+namespace AutoShopManager.Pages.Clientes
 {
     public class CreateModel : PageModel
     {
@@ -24,18 +20,19 @@ namespace AutoShopManager.Pages.Partess
 		}
 
 		[BindProperty]
-		public Partes Partes { get; set; } = default!;
+		public Cliente Cliente { get; set; } = default!;
 
 		public async Task<IActionResult> OnPostAsync()
 		{
-			if (!ModelState.IsValid || _context.Partess == null || Partes == null)
+			if (!ModelState.IsValid || _context.Clientes == null || Cliente == null)
 			{
 				return Page();
 			}
-			_context.Partess.Add(Partes);
+			_context.Clientes.Add(Cliente);
 			await _context.SaveChangesAsync();
 
 			return RedirectToPage("./Index");
 		}
+
 	}
 }
