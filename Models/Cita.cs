@@ -17,10 +17,6 @@ namespace AutoShopManager.Models
         public int VehiculoId { get; set; } = default!; //FK
 
         public Cliente? Cliente { get; set; } = default!;//propiedad de navegacion
-<<<<<<< HEAD
-=======
-        public Vehiculo? Vehiculo { get; set; } = default!;//propiedad de navegacion
->>>>>>> test
-
+        public Vehiculo? Vehiculo { get; set; } = default!;//propiedad de navegacio
     }
 }
