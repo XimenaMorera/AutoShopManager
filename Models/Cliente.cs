@@ -11,4 +11,5 @@
         public ICollection<Vehiculo>? Vehiculos { get; set; } = default!; //propiedad de navegacion
         public ICollection<Cita>? Citas { get; set; } = default!;    //propiedad de navegacion
     }
+
 }

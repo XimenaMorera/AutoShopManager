@@ -5,6 +5,7 @@ namespace AutoShopManager.Models
     public class Vehiculo
     {
         public int Id { get; set; } //llave primaria
+
         public string Placa { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }

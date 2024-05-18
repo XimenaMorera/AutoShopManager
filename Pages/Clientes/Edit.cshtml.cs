@@ -1,11 +1,13 @@
 using AutoShopManager.Data;
 using AutoShopManager.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutoShopManager.Pages.Clientes
 {
+
     public class EditModel : PageModel
     {
 		private readonly AutoShopManagerContext _context;
