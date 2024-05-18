@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using AutoShopManager.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AutoShopManager.Pages.Citas
+namespace AutoShopManager.Pages.Reparaciones
 {
     public class IndexModel : PageModel
     {
@@ -14,13 +14,13 @@ namespace AutoShopManager.Pages.Citas
         {
             _context = context;
         }
-        public IList<Cita> Citas { get; set; } = default;
+        public IList<Reparacion> Reparaciones { get; set; } = default;
 
         public async Task OnGetAsync()
         {
-            if (_context.Citas != null)
+            if (_context.Reparaciones != null)
             {
-                Citas = await _context.Citas.ToListAsync();
+				Reparaciones = await _context.Reparaciones.ToListAsync();
             }
         }
     }

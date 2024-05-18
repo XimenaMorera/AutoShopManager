@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace AutoShopManager.Pages.Citas
+namespace AutoShopManager.Pages.Reparaciones
 {
     public class EditModel : PageModel
     {
@@ -15,22 +15,23 @@ namespace AutoShopManager.Pages.Citas
             _context = context;
         }
         [BindProperty]
-        public Cita Cita { get; set; } = default;
+     
+		public Reparacion Reparacion { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+		public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Citas==null)
+            if (id == null || _context.Reparaciones == null)
             {
                 return NotFound();  
             }
 
-            var cita = await _context.Citas.FirstOrDefaultAsync(m => m.Id == id);
-			if (cita == null)
+            var reparacion = await _context.Reparaciones.FirstOrDefaultAsync(m => m.Id == id);
+			if (reparacion == null)
 			{
 				return NotFound();
 			}
-            Cita = cita;
-            return Page();
+			Reparacion = reparacion;
+			return Page();
 		}
 		
         public async Task<IActionResult> OnPostAsync()
@@ -40,7 +41,7 @@ namespace AutoShopManager.Pages.Citas
                 return Page();
             }
 
-            _context.Attach(Cita).State = EntityState.Modified;
+            _context.Attach(Reparacion).State = EntityState.Modified;
 
             try
             {
@@ -48,7 +49,7 @@ namespace AutoShopManager.Pages.Citas
             }
             catch (Exception ex)
             {
-                if (!CategoryExists(Cita.Id))
+                if (!ReparacionExists(Reparacion.Id))
                 {
                     return NotFound();
                 }
@@ -60,9 +61,9 @@ namespace AutoShopManager.Pages.Citas
             return RedirectToPage("./Index");
         }
 
-		private bool CategoryExists(int id)
+		private bool ReparacionExists(int id)
 		{
-            return (_context.Citas?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Reparaciones?.Any(e => e.Id == id)).GetValueOrDefault();
 		}
 
 		

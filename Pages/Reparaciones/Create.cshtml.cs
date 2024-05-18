@@ -28,7 +28,7 @@ namespace AutoShopManager.Pages.Reparaciones
             {
                 return Page();
             }
-             _context.Reparaciones.Add(Vehiculo); 
+             _context.Vehiculos.Add(Vehiculo); 
 
             await _context.SaveChangesAsync();
 

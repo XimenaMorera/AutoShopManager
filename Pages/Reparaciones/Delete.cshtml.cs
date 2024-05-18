@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using AutoShopManager.Data;
 using AutoShopManager.Models;
 
-namespace AutoShopManager.Pages.Citas
+namespace AutoShopManager.Pages.Reparaciones
 {
     public class DeleteModel : PageModel
     {
@@ -14,24 +14,23 @@ namespace AutoShopManager.Pages.Citas
             _context = context;
         }
         [BindProperty]
-
-		public Cita Cita { get; set; } = default!;
+		public Reparacion Reparacion { get; set; }
 
 		public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Citas == null)
+            if (id == null || _context.Reparaciones == null)
             {
                 return NotFound();
             }
-            var cita = await _context.Citas.FirstOrDefaultAsync(m => m.Id == id);
-            if (cita == null)
+            var reparacion = await _context.Reparaciones.FirstOrDefaultAsync(m => m.Id == id);
+            if (reparacion == null)
             {
                 return NotFound();
             }
             else
             {
-				Cita = cita;
-                _context.Citas.Remove(cita);
+				Reparacion = reparacion;
+                _context.Reparaciones.Remove(reparacion);
                 await _context.SaveChangesAsync();
             }
             return RedirectToPage("./Index");

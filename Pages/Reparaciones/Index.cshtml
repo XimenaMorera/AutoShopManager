@@ -1,9 +1,9 @@
 ﻿@page
-@model AutoShopManager.Pages.Citas.IndexModel
+@model AutoShopManager.Pages.Reparaciones.IndexModel
 @{
 	ViewData["Title"] = "Index Citas";
 }
-	<h1>Index Citas</h1>
+<h1>Index Reparaciones</h1>
 	<p>
 		<a asp-page="Create" class="btn btn-success">Create New</a>
 	</p>
@@ -11,20 +11,20 @@
 		<thead>
 			<tr>
 				<th>
-				@Html.DisplayNameFor(model => model.Citas[0].Cliente)
+				@Html.DisplayNameFor(model => model.Reparaciones[0].Vehiculo)
 				</th>
 				<th>
-				@Html.DisplayNameFor(model => model.Citas[0].Descripcion)
+				@Html.DisplayNameFor(model => model.Reparaciones[0].Descripcion)
 				</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
-		@foreach (var item in Model.Citas)
+		@foreach (var item in Model.Reparaciones)
 			{
 					<tr>
 						<td>
-					@Html.DisplayFor(modelItem => item.Cliente)
+					@Html.DisplayFor(modelItem => item.Vehiculo)
 						</td>
 						<td>
 					@Html.DisplayFor(modelItem => item.Descripcion)

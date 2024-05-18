@@ -1,5 +1,5 @@
 ﻿@page
-@model AutoShopManager.Pages.Citas.DeleteModel
+@model AutoShopManager.Pages.Reparaciones.DeleteModel
 @{
 	ViewData["title"] = "Delete";
 }
@@ -10,22 +10,22 @@
 	<hr />
 	<dl class="row">
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model=> model.Cita.Cliente)
+			@Html.DisplayNameFor(model => model.Reparacion.Vehiculo)
 
 		</dt>
 		<dd class="col-sm-10">
-			@Html.DisplayFor(model => model.Cita.Cliente)
+			@Html.DisplayFor(model => model.Reparacion.Vehiculo)
 		</dd>
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Cita.Descripcion)
+			@Html.DisplayNameFor(model => model.Reparacion.Descripcion)
 
 		</dt>
 		<dd class="col-sm-10">
-			@Html.DisplayFor(model => model.Cita.Descripcion)
+			@Html.DisplayFor(model => model.Reparacion.Descripcion)
 		</dd>	
 	</dl>
 	<form method="post">
-		<input type="hidden" asp-for="Cita.Id" />
+		<input type="hidden" asp-for="Reparacion.Id" />
 		<input type="submit" value="Delete" class="btn btn-danger" />
 		<a asp-page="./index" class"btn btn-prymary">Back to list</a>
 	</form>
