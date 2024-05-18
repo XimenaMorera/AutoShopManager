@@ -1,22 +1,17 @@
-﻿using AutoShopManager.Migrations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoShopManager.Models
 {
     public class Cita
     {
-        //Ensayando para los commitssssssss
         public int Id { get; set; }
-        public int IdVehiculo { get; set; }
-        public int IdCliente { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
 
         public string Hora { get; set; }
         public string Descripcion { get; set; }
-        public Cliente Cliente { get; set; } //propiedad de navegacion
-	//	public Citas Citas  { get; set; }
-
-	}
+        public Cliente? Cliente { get; set; } = default!;//propiedad de navegacion
+        public Personas? personas { get; set; } = default!; 
+    }
 }
