@@ -13,9 +13,29 @@
 			<div asp-asp-validation-summary="Model Only" class="text-danger"></div>
 			<input type="hidden" asp-for="Reparacion.Id" />
 			<div class="form-group">
-				<label asp-for="Reparacion.Vehiculo" class="control-label"></label>
-				<input asp-for="Reparacion.Vehiculo" class="form-control"></input>
-				<span asp-asp-validation-for="Reparacion.Vehiculo" class="text-danger"></span>
+				<label asp-for="Reparacion.Descripcion" class="control-label"></label>
+				<input asp-for="Reparacion.Descripcion" class="form-control"></input>
+				<span asp-asp-validation-for="Reparacion.Descripcion" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Reparacion.FechaInicio" class="control-label"></label>
+				<input asp-for="Reparacion.FechaInicio" class="form-control"></input>
+				<span asp-asp-validation-for="Reparacion.FechaInicio" class="text-danger"></span>
+			</div>
+				<div class="form-group">
+				<label asp-for="Reparacion.FechaFin" class="control-label"></label>
+				<input asp-for="Reparacion.FechaFin" class="form-control"></input>
+				<span asp-asp-validation-for="Reparacion.FechaFin" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Reparacion.CostoEstimado" class="control-label"></label>
+				<input asp-for="Reparacion.CostoEstimado" class="form-control"></input>
+				<span asp-asp-validation-for="Reparacion.CostoEstimado" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Reparacion.VehiculoId" class="control-label"></label>
+				<input asp-for="Reparacion.VehiculoId" class="form-control"></input>
+				<span asp-asp-validation-for="Reparacion.VehiculoId" class="text-danger"></span>
 			</div>
 			<div class="form-group">
 				<label asp-for="Reparacion.Descripcion" class="control-label"></label>

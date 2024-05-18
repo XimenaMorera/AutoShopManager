@@ -1,4 +1,58 @@
 ﻿@page
 @model AutoShopManager.Pages.Partes.IndexModel
 @{
+	ViewData["Title"] = "Index Clientes";
 }
+		<h1>Index Clientes</h1>
+	<p>
+		<a asp-page="Create" class="btn btn-success">Create New</a>
+	</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+				@Html.DisplayNameFor(model => model.Partes[0].Nombre)
+				</th>
+				<th>
+				@Html.DisplayNameFor(model => model.Partes[0].NumeroParte)
+				</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Partes[0].Precio)
+					</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Partes[0].Stock)
+					</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Partes[0].Proveedor)
+					</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		@foreach (var item in Model.Partes)
+		{
+					<tr>
+					<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+					</td>
+					<td>
+					@Html.DisplayFor(modelItem => item.NumeroParte)
+					</td>
+					<td>
+					@Html.DisplayFor(modelItem => item.Precio)
+						</td>
+						<td>
+					@Html.DisplayFor(modelItem => item.Stock)
+						</td>
+						<td>
+					@Html.DisplayFor(modelItem => item.Proveedor)
+				       </td>
+								<td>
+									<a a asp-page="./Edit" asp-route-id="@item.Id" class= "btn btn-warning">Edit</a>
+									<a a asp-page="./Delete" asp-route-id="@item.Id" class= "btn btn-danger">Delete</a>
+								</td>
+
+							</tr>
+		}
+		</tbody>
+	</table>
