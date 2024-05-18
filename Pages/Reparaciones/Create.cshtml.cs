@@ -20,15 +20,15 @@ namespace AutoShopManager.Pages.Reparaciones
         }
 
         [BindProperty]
-       public Vehiculo Vehiculo { get; set; } = default!;
+       public Reparacion Reparacion { get; set; } = default!;
 
        public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Vehiculos == null || Vehiculo == null)
+          if (!ModelState.IsValid || _context.Reparaciones == null || Reparacion == null)
             {
                 return Page();
             }
-             _context.Vehiculos.Add(Vehiculo); 
+             _context.Reparaciones.Add(Reparacion); 
 
             await _context.SaveChangesAsync();
 

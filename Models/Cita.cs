@@ -11,7 +11,16 @@ namespace AutoShopManager.Models
 
         public string Hora { get; set; }
         public string Descripcion { get; set; }
+
+        public int ClienteId { get; set; } = default!; //FK
+
+        public int VehiculoId { get; set; } = default!; //FK
+
         public Cliente? Cliente { get; set; } = default!;//propiedad de navegacion
+<<<<<<< HEAD
+=======
+        public Vehiculo? Vehiculo { get; set; } = default!;//propiedad de navegacion
+>>>>>>> test
 
     }
 }
