@@ -5,6 +5,7 @@ namespace AutoShopManager.Models
 {
     public class Reparacion
     {
+        //nueva reparacion
         public int Id { get; set; } //llave primaria
         public string Descripcion { get; set; }
         public int IdVehiculo { get; set; }//llave foranea
