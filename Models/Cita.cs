@@ -19,3 +19,5 @@ namespace AutoShopManager.Models
         public Vehiculo? Vehiculo { get; set; } = default!;//propiedad de navegacio
     }
 }
+
+

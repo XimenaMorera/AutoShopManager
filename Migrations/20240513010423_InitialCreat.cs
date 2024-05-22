@@ -44,18 +44,18 @@ namespace AutoShopManager.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vehiculos", x => x.Id);
-                    table.ForeignKey(
+                  /*  table.ForeignKey(
                         name: "FK_Vehiculos_Clientes_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Clientes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Cascade);*/
                 });
 
-            migrationBuilder.CreateIndex(
+          /*  migrationBuilder.CreateIndex(
                 name: "IX_Vehiculos_ClienteId",
                 table: "Vehiculos",
-                column: "ClienteId");
+                column: "ClienteId");*/
         }
 
         /// <inheritdoc />
