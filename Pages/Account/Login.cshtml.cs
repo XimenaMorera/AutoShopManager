@@ -3,18 +3,23 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Security.Claims;
+using AutoShopManager.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutoShopManager.Pages.Account
 {
     public class LoginModel : PageModel
     {
-       
+		private readonly AutoShopManagerContext _context;
 
-        [BindProperty]
-        public User User { get; set; }
+		[BindProperty]
+		public User User { get; set; }
 
-       
-        public void OnGet()
+		public LoginModel(AutoShopManagerContext context)
+		{
+			_context = context;
+		}
+		public void OnGet()
         {
         }
         public async Task<IActionResult> OnPostAsync()
@@ -22,10 +27,11 @@ namespace AutoShopManager.Pages.Account
             if (!ModelState.IsValid) return Page();
 
             // Busca un usuario con el correo electrónico especificado
-         //   var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == User.Email);
+          var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == User.Email);
 
-            if (User.Email == "correo@gmail.com" && User.Password == "12345")
-            {
+			//  if (User.Email == "correo@gmail.com" && User.Password == "12345")
+			if (user != null && user.Password == User.Password)
+			{
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, "admin"),
