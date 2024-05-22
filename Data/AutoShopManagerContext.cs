@@ -20,8 +20,9 @@ namespace AutoShopManager.Data
 		public DbSet<Parte> Partes { get; set; }
 		public DbSet<Reparacion> Reparaciones { get; set; }
         public DbSet<Cita> Citas { get; set; }
+		public DbSet<User> Users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
            

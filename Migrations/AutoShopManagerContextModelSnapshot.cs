@@ -44,7 +44,7 @@ namespace AutoShopManager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VehiculoId")
+                    b.Property<int?>("VehiculoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -149,6 +149,27 @@ namespace AutoShopManager.Migrations
                     b.ToTable("Reparaciones");
                 });
 
+            modelBuilder.Entity("AutoShopManager.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("AutoShopManager.Models.Vehiculo", b =>
                 {
                     b.Property<int>("Id")
@@ -196,9 +217,7 @@ namespace AutoShopManager.Migrations
 
                     b.HasOne("AutoShopManager.Models.Vehiculo", "Vehiculo")
                         .WithMany("Citas")
-                        .HasForeignKey("VehiculoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("VehiculoId");
 
                     b.Navigation("Cliente");
 

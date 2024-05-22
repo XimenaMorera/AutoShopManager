@@ -1,7 +1,7 @@
 ﻿@page
 @model AutoShopManager.Pages.Reparaciones.IndexModel
 @{
-	ViewData["Title"] = "Index Citas";
+	ViewData["Title"] = "Index Reparaciones";
 }
 <h1>Index Reparaciones</h1>
 	<p>
@@ -14,33 +14,37 @@
 				@Html.DisplayNameFor(model => model.Reparaciones[0].Descripcion)
 				</th>
 				<th>
-				@Html.DisplayNameFor(model => model.Reparaciones[0].FechaInicio)
+				@Html.DisplayNameFor(model => model.Reparaciones[0].CostoEstimado)
 				</th>
 				<th>
-				@Html.DisplayNameFor(model => model.Reparaciones[0].FechaFin)
+				@Html.DisplayNameFor(model => model.Reparaciones[0].VehiculoId)
 				</th>
+				
+				
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<tbody>
-		@foreach (var item in Model.Reparaciones)
-			{
-			<tr>
-				<td>
+	<tbody>
+	
+				@foreach (var item in Model.Reparaciones)
+		{
+							<tr>
+								<td>
 					@Html.DisplayFor(modelItem => item.Descripcion)
-				</td
-				<td>
-					@Html.DisplayFor(modelItem => item.FechaInicio)
-				</td>
-				<td>
-						@Html.DisplayFor(modelItem => item.FechaFin)
-				</td>
-						<td>
-							<a a asp-page="./Edit" asp-route-id="@item.Id" class= "btn btn-warning">Edit</a>
-							<a a asp-page="./Delete" asp-route-id="@item.Id" class= "btn btn-danger">Delete</a>
-						</td>
+								</td>
+								<td>
+					@Html.DisplayFor(modelItem => item.CostoEstimado)
+								</td>
+										<td>
+					@Html.DisplayFor(modelItem => item.VehiculoId)
+										</td>
+				
+								<td>
+									<a a asp-page="./Edit" asp-route-id="@item.Id" class= "btn btn-warning">Edit</a>
+									<a a asp-page="./Delete" asp-route-id="@item.Id" class= "btn btn-danger">Delete</a>
+								</td>
 
-					</tr>
-			}
+							</tr>
+		}
 		</tbody>
 	</table>

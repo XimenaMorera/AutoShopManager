@@ -11,7 +11,7 @@ namespace AutoShopManager.Models
         public string Modelo { get; set; }
         public int Año { get; set; }
         public string Color { get; set; }
-        public int ClienteId { get; set; }//llave foranea
+		public int ClienteId { get; set; }//llave foranea
         public Cliente? Cliente { get; set; } = default!; //propiedad de navegacion
 
         public ICollection<Reparacion>? Reparaciones { get; set; } = default!; //propiedad de navegacion
